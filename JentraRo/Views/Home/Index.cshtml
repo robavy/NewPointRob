@@ -5,7 +5,8 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-lg-2">
-            <button type="button" class="btn btn-outline-success btn-lg">Iniciar</button>
+          <a href="~/Upload/Index" class="btn btn-outline-success btn-lg">Inicio</a>
+      
         </div>
         <div class="col-lg-2">
             <button type="button" class="btn btn-outline-success btn-lg">Probar</button>
@@ -13,61 +14,14 @@
     </div>
 </div>
 <br />
-<div class="container">
-    <div class="row">
 
-        @*@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data"}))
-        {*@
-            <div class="col-md-3">
-                <label for="inputFile">Cargar Archivo</label>
-                <input type="file" id="inputFile" accept=".cer, .key">
-            </div>
-            <div class="preview">
-                <p>No hay archivos seleccionados</p>
-            </div>
-
-            <div class="col-md-3">
-                <input  id="btnUploadFile"  class="btn btn-outline-primary" type="button" value="Upload File"/>
-            </div>
-        
-    </div>
-</div>
 @section scripts
-    {
+{
+
     <script type="text/javascript">
-
-
-        $(document).ready(function () {
-            debugger
-            var input = $('input[type="file"]');
-            var preview = $('.preview');
-
-            //input.css({ "opacity": "0" });
-
-            $('#btnUploadFile').on('click', function () {
-                debugger
-                var data = new FormData();
-                var files = $("#inputFile").get(0).files;
-
-                if (files.length > 0) {
-                    data.append("UploadCert", files[0]);
-                }
-
-                var ajaxRequest = $.ajax({
-                    type: "POST",
-                    url: '@Url.Action("Upload","Home")',
-                    contentType: false,
-                    processData: false,
-                    data: data
-                });
-
-                ajaxRequest.done(function (xhr, textStatus) {
-
-                });
-            });
-        });
-
-
-
+       
     </script>
+
+
 }
+
